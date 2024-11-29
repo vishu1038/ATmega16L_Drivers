@@ -134,7 +134,16 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="sys_cnfg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uart_driver.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uart_driver.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

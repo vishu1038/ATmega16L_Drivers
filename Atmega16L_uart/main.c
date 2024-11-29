@@ -5,21 +5,22 @@
  * Author : Vishal Agarwal
  */ 
 
-#define F_CPU 12000000UL
-#define TICK_PART (float)1.0/F_CPU
-#include <avr/io.h>
-#include <util/delay.h>
+#include "sys_cnfg.h"
+#include "uart_driver.h"
 
 uint8_t s_led_timer_u8 = 0;
 
 void system_init()
 {
 	DDRB = 0x02; //SET PB1 as Output for status led
+
+	/* Enable Global Interrupts */
+	SREG |= (1 << 7);
 }
 
 void status_led_blink()
 {
-	if(s_led_timer_u8 < 50)
+    if(s_led_timer_u8 < 50)
 	{
 		s_led_timer_u8++;
 	}
@@ -33,6 +34,9 @@ void status_led_blink()
 int main(void)
 {
 	system_init();
+	
+	/* Initialize UART */
+	uart_init();
 	
     /* Replace with your application code */
     while (1) 
