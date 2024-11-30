@@ -8,19 +8,19 @@
 #include "sys_cnfg.h"
 #include "uart_driver.h"
 
-uint8_t s_led_timer_u8 = 0;
+U8 s_led_timer_u8 = 0;
 
 void system_init()
 {
 	DDRB = 0x02; //SET PB1 as Output for status led
 
 	/* Enable Global Interrupts */
-	SREG |= (1 << 7);
+	 sei();
 }
 
 void status_led_blink()
 {
-    if(s_led_timer_u8 < 50)
+    if(s_led_timer_u8 < 5)
 	{
 		s_led_timer_u8++;
 	}
@@ -36,14 +36,27 @@ int main(void)
 	system_init();
 	
 	/* Initialize UART */
-	uart_init();
+	U8 status_u8 = uart_init();
 	
     /* Replace with your application code */
-    while (1) 
+    while (status_u8 == 0) 
     {
 		status_led_blink();
+		
+		if(uart_data_st.rx_rcvd_b1 == 1)
+		{
+			uart_data_st.rx_rcvd_b1 = 0;
+			if(uart_data_st.rx_data_b9 == 0x03)
+			{
+				uart_transmit(0x03);
+			}
+		}
+		else
+		{
+			uart_transmit(0b101010101);
+		}
 	
-		_delay_ms(10);
+		_delay_ms(100);
     }
 }
 

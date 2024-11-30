@@ -14,5 +14,12 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <stdint.h>
+#include <avr/interrupt.h>
+
+typedef float SFP;
+typedef uint32_t U32;
+typedef uint8_t U8;
+typedef uint16_t U16;
+typedef int8_t S8;
 
 #endif /* SYS_CNFG_H_ */
