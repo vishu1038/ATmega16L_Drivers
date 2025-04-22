@@ -2,7 +2,9 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-uart_driver.c
+i2c\i2c_driver.c
+
+uart\uart_driver.c
 
 main.c
 

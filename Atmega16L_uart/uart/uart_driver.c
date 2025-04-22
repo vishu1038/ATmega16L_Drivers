@@ -8,7 +8,7 @@
 #include "uart_driver.h"
 #include "sys_cnfg.h"
 
-#define BAUD_UBRR(baud) ((uint16_t)((F_CPU/16UL/baud) - 1))
+#define BAUD_UBRR(baud) ((U16)((F_CPU/16UL/baud) - 1))
 
 uart_config_tst uart_config_st = {
 	.baud_b3 = UART_BAUD_9600,

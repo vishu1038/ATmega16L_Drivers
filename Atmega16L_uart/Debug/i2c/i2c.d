@@ -1,5 +1,6 @@
-main.d main.o main.o: .././main.c .././sys_cnfg.h \
-  c:/winavr-20100110/lib/gcc/../../avr/include/avr/io.h \
+i2c/i2c.d i2c/i2c.o i2c/i2c.o: ../i2c/i2c.c \
+  c:/winavr-20100110/lib/gcc/../../avr/include/math.h ../i2c/i2c.h \
+  ../sys_cnfg.h c:/winavr-20100110/lib/gcc/../../avr/include/avr/io.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/avr/sfr_defs.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/inttypes.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/stdint.h \
@@ -11,10 +12,13 @@ main.d main.o main.o: .././main.c .././sys_cnfg.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/avr/lock.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h \
-  c:/winavr-20100110/lib/gcc/../../avr/include/avr/interrupt.h \
-  .././uart/uart_driver.h ../sys_cnfg.h .././i2c/i2c_driver.h
+  c:/winavr-20100110/lib/gcc/../../avr/include/avr/interrupt.h
 
-.././sys_cnfg.h:
+c:/winavr-20100110/lib/gcc/../../avr/include/math.h:
+
+../i2c/i2c.h:
+
+../sys_cnfg.h:
 
 c:/winavr-20100110/lib/gcc/../../avr/include/avr/io.h:
 
@@ -41,9 +45,3 @@ c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:
 c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h:
 
 c:/winavr-20100110/lib/gcc/../../avr/include/avr/interrupt.h:
-
-.././uart/uart_driver.h:
-
-../sys_cnfg.h:
-
-.././i2c/i2c_driver.h:

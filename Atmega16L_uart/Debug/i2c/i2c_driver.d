@@ -1,5 +1,5 @@
-uart_driver.d uart_driver.o uart_driver.o: .././uart_driver.c \
-  .././uart_driver.h .././sys_cnfg.h \
+i2c/i2c_driver.d i2c/i2c_driver.o i2c/i2c_driver.o: ../i2c/i2c_driver.c \
+  ../i2c/i2c_driver.h ../sys_cnfg.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/avr/io.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/avr/sfr_defs.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/inttypes.h \
@@ -14,9 +14,9 @@ uart_driver.d uart_driver.o uart_driver.o: .././uart_driver.c \
   c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h \
   c:/winavr-20100110/lib/gcc/../../avr/include/avr/interrupt.h
 
-.././uart_driver.h:
+../i2c/i2c_driver.h:
 
-.././sys_cnfg.h:
+../sys_cnfg.h:
 
 c:/winavr-20100110/lib/gcc/../../avr/include/avr/io.h:
 

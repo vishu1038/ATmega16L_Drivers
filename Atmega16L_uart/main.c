@@ -6,7 +6,8 @@
  */ 
 
 #include "sys_cnfg.h"
-#include "uart_driver.h"
+#include "uart/uart_driver.h"
+#include "i2c/i2c_driver.h"
 
 U8 s_led_timer_u8 = 0;
 
@@ -37,6 +38,9 @@ int main(void)
 	
 	/* Initialize UART */
 	U8 status_u8 = uart_init();
+	
+	/* Initialize I2C */
+	status_u8 = i2c_init();
 	
     /* Replace with your application code */
     while (status_u8 == 0) 
