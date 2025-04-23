@@ -7,10 +7,10 @@
 
 #include "i2c_driver.h"
 
-#define BITRATE_TWBR(freq) (U8)(((F_CPU / freq) - 16) / 2)
+#define SELF_I2C_ADDR (0x69) //self addr, 0x00 is used for taling to everybody.
 
 i2c_config_tst i2c_config_st = {
-	.self_addr_b7 = 0x01,
+	.self_addr_b7 = SELF_I2C_ADDR,
 	
 	.freq_b3 = I2C_100KHZ,
 	.freq_prescalar_b2 = FREQ_PRESCALAR_NONE,
@@ -19,10 +19,11 @@ i2c_config_tst i2c_config_st = {
 	.ack_chk_en_b1 = I2C_ACK_CHK_DIS,
 };
 
-U8 prescalar_calc()
+static U8 twbr_generator()
 {
+	//created separate logic to calculate power instead of using math lib for optimization
 	U8 res_u8 = 1;
-	if(i2c_config_st.freq_prescalar_b2 > 0)
+	if(i2c_config_st.freq_prescalar_b2 > FREQ_PRESCALAR_NONE)
 	{
 		for(U8 i = 0; i < i2c_config_st.freq_prescalar_b2; i++) //calc final prescalar value
 		{
@@ -30,7 +31,7 @@ U8 prescalar_calc()
 		}
 	}
 	
-	return res_u8;
+	return (U8)(((F_CPU / (i2c_config_st.freq_b3 * 100000UL)) - 16) / (2 * res_u8)); //formula in data sheet to calculate TWBR register	
 }
 
 /* I2C INIT FUNCTION */
@@ -44,7 +45,7 @@ U8 i2c_init()
 	/* Configure Bit Rate for I2C */
 	if(i2c_config_st.freq_b3 <= 4)
 	{
-		TWBR = BITRATE_TWBR((U32)i2c_config_st.freq_b3 * 100000UL) / prescalar_calc();
+		TWBR = twbr_generator();
 	}
 	else
 	{
@@ -84,7 +85,7 @@ ISR(TWI_vect)
 	TWCR |= (0 << TWINT);
 }
 
-void ack_chk()
+static void ack_chk()
 {
 	switch(i2c_config_st.ack_chk_en_b1)
 	{
@@ -98,7 +99,7 @@ void ack_chk()
 	}
 }
 
-void start_bit_send()
+static void start_bit_send()
 {
 	/* Start bit send */
 	TWCR |= (1 << TWSTA);

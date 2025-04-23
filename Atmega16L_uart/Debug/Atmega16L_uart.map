@@ -2,8 +2,6 @@ Archive member included because of file (symbol)
 
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
                               i2c/i2c_driver.o (__mulsi3)
-c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
-                              i2c/i2c_driver.o (__udivmodqi4)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
                               i2c/i2c_driver.o (__udivmodsi4)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
@@ -39,9 +37,6 @@ Discarded input sections
  .text          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
  .data          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
  .bss           0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
- .text          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
- .data          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
- .bss           0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
  .text          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
  .data          0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
  .bss           0x00000000        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
@@ -172,7 +167,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x5f0
+.text           0x00000000      0x5c4
  *(.vectors)
  .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm16.o
                 0x00000000                __vectors
@@ -249,43 +244,38 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x0000008e                __vector_20
                 0x00000092                . = ALIGN (0x2)
  *(.text.*)
- .text.prescalar_calc
-                0x00000092       0x32 i2c/i2c_driver.o
-                0x00000092                prescalar_calc
  .text.i2c_init
-                0x000000c4       0xa0 i2c/i2c_driver.o
-                0x000000c4                i2c_init
+                0x00000092       0xbe i2c/i2c_driver.o
+                0x00000092                i2c_init
  .text.__vector_17
-                0x00000164       0x28 i2c/i2c_driver.o
-                0x00000164                __vector_17
+                0x00000150       0x28 i2c/i2c_driver.o
+                0x00000150                __vector_17
  .text.uart_init
-                0x0000018c      0x1c8 uart/uart_driver.o
-                0x0000018c                uart_init
+                0x00000178      0x1c8 uart/uart_driver.o
+                0x00000178                uart_init
  .text.__vector_11
-                0x00000354       0xa6 uart/uart_driver.o
-                0x00000354                __vector_11
+                0x00000340       0xa6 uart/uart_driver.o
+                0x00000340                __vector_11
  .text.uart_transmit
-                0x000003fa       0x8a uart/uart_driver.o
-                0x000003fa                uart_transmit
+                0x000003e6       0x8a uart/uart_driver.o
+                0x000003e6                uart_transmit
  .text.system_init
-                0x00000484        0x8 main.o
-                0x00000484                system_init
+                0x00000470        0x8 main.o
+                0x00000470                system_init
  .text.status_led_blink
-                0x0000048c       0x22 main.o
-                0x0000048c                status_led_blink
- .text.main     0x000004ae       0xa4 main.o
-                0x000004ae                main
- .text.libgcc   0x00000552       0x3e c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
-                0x00000552                __mulsi3
- .text.libgcc   0x00000590       0x18 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
-                0x00000590                __udivmodqi4
- .text.libgcc   0x000005a8       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
-                0x000005a8                __udivmodsi4
-                0x000005ec                . = ALIGN (0x2)
+                0x00000478       0x22 main.o
+                0x00000478                status_led_blink
+ .text.main     0x0000049a       0xa4 main.o
+                0x0000049a                main
+ .text.libgcc   0x0000053e       0x3e c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+                0x0000053e                __mulsi3
+ .text.libgcc   0x0000057c       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x0000057c                __udivmodsi4
+                0x000005c0                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000005ec        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x000005ec                exit
-                0x000005ec                _exit
+ .fini9         0x000005c0        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x000005c0                exit
+                0x000005c0                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -304,11 +294,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000005ec        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x000005c0        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000005f0                _etext = .
+                0x000005c4                _etext = .
 
-.data           0x00800060        0x4 load address 0x000005f0
+.data           0x00800060        0x4 load address 0x000005c4
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -336,8 +326,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  COMMON         0x00800065        0x3 uart/uart_driver.o
                 0x00800065                uart_data_st
                 0x00800068                PROVIDE (__bss_end, .)
-                0x000005f0                __data_load_start = LOADADDR (.data)
-                0x000005f4                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000005c4                __data_load_start = LOADADDR (.data)
+                0x000005c8                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800068        0x0
                 0x00800068                PROVIDE (__noinit_start, .)
@@ -395,71 +385,71 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0xa8
+.debug_aranges  0x00000000       0xa0
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x48 i2c/i2c_driver.o
+                0x00000000       0x40 i2c/i2c_driver.o
  .debug_aranges
-                0x00000048       0x30 uart/uart_driver.o
+                0x00000040       0x30 uart/uart_driver.o
  .debug_aranges
-                0x00000078       0x30 main.o
+                0x00000070       0x30 main.o
 
 .debug_pubnames
-                0x00000000      0x143
+                0x00000000      0x111
  *(.debug_pubnames)
  .debug_pubnames
-                0x00000000       0x8a i2c/i2c_driver.o
+                0x00000000       0x58 i2c/i2c_driver.o
  .debug_pubnames
-                0x0000008a       0x66 uart/uart_driver.o
+                0x00000058       0x66 uart/uart_driver.o
  .debug_pubnames
-                0x000000f0       0x53 main.o
+                0x000000be       0x53 main.o
 
-.debug_info     0x00000000      0x6f7
+.debug_info     0x00000000      0x735
  *(.debug_info)
- .debug_info    0x00000000      0x257 i2c/i2c_driver.o
- .debug_info    0x00000257      0x2c3 uart/uart_driver.o
- .debug_info    0x0000051a      0x1dd main.o
+ .debug_info    0x00000000      0x295 i2c/i2c_driver.o
+ .debug_info    0x00000295      0x2c3 uart/uart_driver.o
+ .debug_info    0x00000558      0x1dd main.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0x34b
+.debug_abbrev   0x00000000      0x382
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x12a i2c/i2c_driver.o
- .debug_abbrev  0x0000012a      0x105 uart/uart_driver.o
- .debug_abbrev  0x0000022f      0x11c main.o
+ .debug_abbrev  0x00000000      0x161 i2c/i2c_driver.o
+ .debug_abbrev  0x00000161      0x105 uart/uart_driver.o
+ .debug_abbrev  0x00000266      0x11c main.o
 
-.debug_line     0x00000000      0x729
+.debug_line     0x00000000      0x719
  *(.debug_line)
- .debug_line    0x00000000      0x253 i2c/i2c_driver.o
- .debug_line    0x00000253      0x2be uart/uart_driver.o
- .debug_line    0x00000511      0x218 main.o
+ .debug_line    0x00000000      0x243 i2c/i2c_driver.o
+ .debug_line    0x00000243      0x2be uart/uart_driver.o
+ .debug_line    0x00000501      0x218 main.o
 
-.debug_frame    0x00000000       0xf0
+.debug_frame    0x00000000       0xe0
  *(.debug_frame)
- .debug_frame   0x00000000       0x70 i2c/i2c_driver.o
- .debug_frame   0x00000070       0x40 uart/uart_driver.o
- .debug_frame   0x000000b0       0x40 main.o
+ .debug_frame   0x00000000       0x60 i2c/i2c_driver.o
+ .debug_frame   0x00000060       0x40 uart/uart_driver.o
+ .debug_frame   0x000000a0       0x40 main.o
 
-.debug_str      0x00000000      0x533
+.debug_str      0x00000000      0x595
  *(.debug_str)
- .debug_str     0x00000000      0x247 i2c/i2c_driver.o
-                                0x27b (size before relaxing)
- .debug_str     0x00000247      0x275 uart/uart_driver.o
+ .debug_str     0x00000000      0x2a9 i2c/i2c_driver.o
+                                0x2dd (size before relaxing)
+ .debug_str     0x000002a9      0x275 uart/uart_driver.o
                                 0x36a (size before relaxing)
- .debug_str     0x000004bc       0x77 main.o
+ .debug_str     0x0000051e       0x77 main.o
                                 0x1cb (size before relaxing)
 
-.debug_loc      0x00000000      0x1ea
+.debug_loc      0x00000000      0x205
  *(.debug_loc)
- .debug_loc     0x00000000       0xfc i2c/i2c_driver.o
- .debug_loc     0x000000fc       0x9e uart/uart_driver.o
- .debug_loc     0x0000019a       0x50 main.o
+ .debug_loc     0x00000000      0x117 i2c/i2c_driver.o
+ .debug_loc     0x00000117       0x9e uart/uart_driver.o
+ .debug_loc     0x000001b5       0x50 main.o
 
 .debug_macinfo
  *(.debug_macinfo)
 OUTPUT(Atmega16L_uart.elf elf32-avr)
 LOAD linker stubs
 
-.debug_ranges   0x00000000       0xd8
- .debug_ranges  0x00000000       0x40 i2c/i2c_driver.o
- .debug_ranges  0x00000040       0x28 uart/uart_driver.o
- .debug_ranges  0x00000068       0x70 main.o
+.debug_ranges   0x00000000       0xd0
+ .debug_ranges  0x00000000       0x38 i2c/i2c_driver.o
+ .debug_ranges  0x00000038       0x28 uart/uart_driver.o
+ .debug_ranges  0x00000060       0x70 main.o
