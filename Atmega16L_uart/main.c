@@ -57,7 +57,9 @@ int main(void)
 		}
 		else
 		{
-			uart_transmit(0b101010101);
+			U8 data_u8 = 0b01010101;
+			uart_transmit(data_u8);
+			i2c_transmit_frame(0x12, I2C_WRITE, &data_u8, 1);
 		}
 	
 		_delay_ms(100);

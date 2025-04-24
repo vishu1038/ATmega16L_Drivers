@@ -62,5 +62,6 @@ enum i2c_read_write_cnfg_e_tag
 };
 
 U8 i2c_init();
+U8 i2c_transmit_frame(U8 slave_addr_u8, U8 read_write_bool, U8* data_u8, U8 data_length_u8);
 
 #endif /* I2C_H_ */

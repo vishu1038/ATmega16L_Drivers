@@ -40,7 +40,7 @@
         </dependencies>
       </framework-data>
     </AsfFrameworkConfig>
-    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+    <avrtool>custom</avrtool>
     <avrtoolserialnumber />
     <avrdeviceexpectedsignature>0x1E9403</avrdeviceexpectedsignature>
     <custom>
@@ -55,7 +55,7 @@
       </ToolNumber>
       <ToolName>Custom Programming Tool</ToolName>
     </custom>
-    <CustomProgrammingToolCommand>avrdude.exe -c usbasp -p m16 -P usb -U flash:w:$(ProjectDir)Debug\$(TargetName).hex:i</CustomProgrammingToolCommand>
+    <CustomProgrammingToolCommand>avrdude.exe -c usbasp -p m16 -P usb -U flash:w:$(ProjectDir)Debug\$(TargetName).hex:i </CustomProgrammingToolCommand>
     <avrtoolinterface />
     <com_atmel_avrdbg_tool_simulator>
       <ToolOptions xmlns="">
